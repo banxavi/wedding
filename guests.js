@@ -958,6 +958,10 @@ function getGuestAddress(name) {
   return null;
 }
 
+function isFriendGroup(group) {
+  return /bạn học|đá banh|tma|dc|xã giao/i.test(group || '');
+}
+
 function createGuestInvitation(guest) {
   const isFamily = Number(guest.partySize) >= 2;
   const titledGuest = getGuestAddress(guest.name);
@@ -974,12 +978,13 @@ function createGuestInvitation(guest) {
     };
   }
 
-  const displayName = isFamily ? `gia đình ${guest.name}` : `bạn ${guest.name} + ❤️`;
+  const familyName = isFriendGroup(guest.group) ? `gia đình bạn ${guest.name}` : `gia đình ${guest.name}`;
+  const displayName = isFamily ? familyName : `bạn ${guest.name} + ❤️`;
 
   return {
     greeting: `Thân mến ${displayName},`,
     invitationMessage: isFamily
-      ? `Thành Nhật và Anh Thảo trân trọng kính mời gia đình ${guest.name} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của gia đình là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.`
+      ? `Thành Nhật và Anh Thảo trân trọng kính mời ${familyName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của gia đình là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.`
       : `Thành Nhật và Anh Thảo rất mong bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của bạn là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.`,
     name: guest.name,
     group: guest.group || 'Khách mời',
