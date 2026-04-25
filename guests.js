@@ -941,7 +941,7 @@ const weddingGuestList = [
 
 function createGuestInvitation(guest) {
   const isFamily = Number(guest.partySize) >= 2;
-  const displayName = isFamily ? `gia đình ${guest.name}` : `bạn ${guest.name} + <3`;
+  const displayName = isFamily ? `gia đình ${guest.name}` : `bạn ${guest.name} + ❤️`;
 
   return {
     greeting: `Thân mến ${displayName},`,
