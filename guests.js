@@ -968,10 +968,11 @@ function createGuestInvitation(guest) {
 
   if (titledGuest) {
     const displayName = isFamily ? `gia đình ${titledGuest.address}` : titledGuest.address;
+    const presenceSubject = isFamily ? `gia đình ${titledGuest.title}` : titledGuest.title;
 
     return {
       greeting: `Thân mến ${displayName},`,
-      invitationMessage: `Chúng em là Thành Nhật và Anh Thảo, trân trọng kính mời ${displayName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${titledGuest.title} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng em.`,
+      invitationMessage: `Chúng em là Thành Nhật và Anh Thảo, trân trọng kính mời ${displayName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng em.`,
       name: guest.name,
       group: guest.group || 'Khách mời',
       showAfterParty: false
@@ -980,12 +981,14 @@ function createGuestInvitation(guest) {
 
   const familyName = isFriendGroup(guest.group) ? `gia đình bạn ${guest.name}` : `gia đình ${guest.name}`;
   const displayName = isFamily ? familyName : `bạn ${guest.name} + ❤️`;
+  const presenceSubject = isFamily && isFriendGroup(guest.group) ? 'gia đình bạn' : isFamily ? 'gia đình' : 'bạn';
+  const recipientPronoun = isFriendGroup(guest.group) ? 'chúng mình' : 'chúng tôi';
 
   return {
     greeting: `Thân mến ${displayName},`,
     invitationMessage: isFamily
-      ? `Thành Nhật và Anh Thảo trân trọng kính mời ${familyName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của gia đình là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.`
-      : `Thành Nhật và Anh Thảo rất mong bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của bạn là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.`,
+      ? `Thành Nhật và Anh Thảo trân trọng kính mời ${familyName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho ${recipientPronoun}.`
+      : `Thành Nhật và Anh Thảo rất mong bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho ${recipientPronoun}.`,
     name: guest.name,
     group: guest.group || 'Khách mời',
     showAfterParty: false
