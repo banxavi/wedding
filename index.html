@@ -35,7 +35,7 @@
       background: var(--ivory);
       color: var(--text-dark);
       font-family: var(--font-body);
-      font-size: 18px;
+      font-size: 19px;
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -60,7 +60,7 @@
       border-radius: 999px;
       color: var(--wine);
       font-family: var(--font-body);
-      font-size: 13px;
+      font-size: 18px;
       font-style: italic;
       letter-spacing: .03em;
       line-height: 1;
@@ -130,7 +130,7 @@
 
     .hero-monogram {
       font-family: var(--font-heading);
-      font-size: clamp(13px, 2vw, 18px);
+      font-size: clamp(14px, 2vw, 19px);
       font-weight: 500;
       color: var(--gold);
       letter-spacing: .32em;
@@ -141,7 +141,7 @@
 
     .hero-invite-text {
       font-family: var(--font-body);
-      font-size: clamp(12px, 2vw, 16px);
+      font-size: clamp(15px, 2vw, 18px);
       font-style: italic;
       letter-spacing: .04em;
       line-height: 1.65;
@@ -185,7 +185,7 @@
     }
     .hero-date-roman {
       font-family: var(--font-body);
-      font-size: clamp(13px, 2vw, 18px);
+      font-size: clamp(15px, 2vw, 19px);
       font-style: italic;
       letter-spacing: .12em; color: var(--wine);
       margin-bottom: 10px;
@@ -193,12 +193,12 @@
     }
     .hero-date-full {
       font-family: var(--font-body);
-      font-size: clamp(16px, 2.5vw, 22px);
+      font-size: clamp(18px, 2.5vw, 24px);
       font-style: italic; color: var(--text-mid);
     }
     .hero-location {
       font-family: var(--font-body);
-      font-size: clamp(12px, 1.8vw, 15px);
+      font-size: clamp(15px, 1.8vw, 18px);
       font-style: italic;
       letter-spacing: .03em;
       line-height: 1.55;
@@ -212,7 +212,7 @@
       display: flex; flex-direction: column; align-items: center; gap: 6px;
       opacity: 0; animation: riseIn .7s 1.6s forwards;
     }
-    .scroll-cue p { font-family: var(--font-body); font-size: 11px; font-style: italic; letter-spacing: .06em; color: var(--parchment); line-height: 1.5; }
+    .scroll-cue p { font-family: var(--font-body); font-size: 13px; font-style: italic; letter-spacing: .06em; color: var(--parchment); line-height: 1.5; }
     .scroll-arrow { width: 20px; height: 20px; border-right: 1px solid var(--parchment); border-bottom: 1px solid var(--parchment); transform: rotate(45deg); animation: bob .8s ease-in-out infinite alternate; }
     @keyframes bob { from { transform: rotate(45deg) translateY(-3px); } to { transform: rotate(45deg) translateY(3px); } }
 
@@ -243,10 +243,12 @@
       position: relative;
       max-width: 840px;
       margin: 0 auto;
-      padding: clamp(34px, 7vw, 64px);
-      border: 1px solid rgba(154,120,64,.28);
-      background: rgba(255,255,255,.58);
-      box-shadow: 0 24px 80px rgba(61,40,16,.08);
+      padding: clamp(44px, 7vw, 72px) clamp(26px, 7vw, 70px);
+      border: 1px solid rgba(154,120,64,.36);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.82), rgba(250,246,239,.72)),
+        radial-gradient(circle at 50% 0%, rgba(196,160,96,.16), transparent 34%);
+      box-shadow: 0 28px 90px rgba(61,40,16,.12);
       text-align: center;
       overflow: hidden;
     }
@@ -257,10 +259,67 @@
       border: 1px solid rgba(196,160,96,.18);
       pointer-events: none;
     }
+    .guest-card::after {
+      content: '';
+      position: absolute;
+      inset: 26px;
+      border: 1px solid rgba(107,45,62,.08);
+      pointer-events: none;
+    }
+    .guest-seal {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 76px;
+      height: 76px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(154,120,64,.45);
+      border-radius: 50%;
+      color: var(--wine);
+      background: rgba(250,246,239,.76);
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-style: italic;
+      box-shadow: inset 0 0 0 8px rgba(232,212,168,.2);
+    }
+    .guest-divider {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 440px;
+      margin: 24px auto;
+      color: var(--gold);
+    }
+    .guest-divider::before,
+    .guest-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(154,120,64,.42));
+    }
+    .guest-divider::after {
+      background: linear-gradient(90deg, rgba(154,120,64,.42), transparent);
+    }
+    .guest-closing {
+      position: relative;
+      z-index: 1;
+      margin-top: 24px;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: clamp(20px, 3vw, 28px);
+      font-style: italic;
+      line-height: 1.35;
+    }
     .guest-kicker,
     .section-kicker {
+      position: relative;
+      z-index: 1;
       font-family: var(--font-body);
-      font-size: clamp(12px, 2vw, 14px);
+      font-size: clamp(14px, 2vw, 16px);
       font-style: italic;
       letter-spacing: .08em;
       line-height: 1.5;
@@ -269,6 +328,8 @@
       text-transform: uppercase;
     }
     .guest-name {
+      position: relative;
+      z-index: 1;
       font-family: var(--font-heading);
       font-size: clamp(28px, 5.2vw, 50px);
       font-style: normal;
@@ -278,10 +339,12 @@
       margin-bottom: 18px;
     }
     .guest-message {
+      position: relative;
+      z-index: 1;
       max-width: 650px;
       margin: 0 auto;
       color: var(--text-mid);
-      font-size: clamp(17px, 2.2vw, 21px);
+      font-size: clamp(18px, 2.35vw, 23px);
       font-style: normal;
       line-height: 1.9;
     }
@@ -383,7 +446,7 @@
     .photo-icon { opacity: .4; }
     .photo-upload-hint {
       font-family: var(--font-body); font-style: italic;
-      font-size: 14px; color: rgba(196,160,96,.6); text-align: center;
+      font-size: 16px; color: rgba(196,160,96,.6); text-align: center;
       padding: 0 20px; line-height: 1.7;
     }
     .photo-real {
@@ -395,7 +458,7 @@
       padding: 10px 22px;
       border: 1px solid rgba(196,160,96,.5);
       color: var(--gold-light); font-family: var(--font-body);
-      font-size: 12px; letter-spacing: .04em;
+      font-size: 14px; letter-spacing: .04em;
       cursor: pointer; background: transparent;
       transition: background .3s, color .3s;
     }
@@ -404,7 +467,7 @@
 
     .photo-text { color: var(--ivory); }
     .photo-label {
-      font-family: var(--font-body); font-size: clamp(12px, 2vw, 14px);
+      font-family: var(--font-body); font-size: clamp(14px, 2vw, 16px);
       font-style: italic;
       letter-spacing: .05em; line-height: 1.5;
       color: var(--gold-light); margin-bottom: 20px;
@@ -418,7 +481,7 @@
     }
     .photo-body {
       font-family: var(--font-body); font-style: normal;
-      font-size: clamp(17px, 2vw, 20px); line-height: 1.9;
+      font-size: clamp(18px, 2.1vw, 22px); line-height: 1.9;
       color: rgba(240,232,216,.75); max-width: 360px;
     }
     .photo-quote {
@@ -428,7 +491,7 @@
       font-size: clamp(18px, 2.5vw, 24px); color: var(--gold-light);
       line-height: 1.6;
     }
-    .photo-quote cite { display: block; margin-top: 10px; font-size: 13px; letter-spacing: .04em; font-style: normal; color: var(--wine-pale); font-family: var(--font-body); line-height: 1.5; }
+    .photo-quote cite { display: block; margin-top: 10px; font-size: 15px; letter-spacing: .04em; font-style: normal; color: var(--wine-pale); font-family: var(--font-body); line-height: 1.5; }
 
     /* ════════════════ DATE DETAILS ════════════════ */
     .details-section {
@@ -462,7 +525,7 @@
     .detail-icon { font-size: 22px; margin-bottom: 16px; }
     .detail-label {
       font-family: var(--font-body);
-      font-size: clamp(11px, 1.8vw, 13px);
+      font-size: clamp(13px, 1.8vw, 15px);
       font-style: italic;
       letter-spacing: .06em;
       line-height: 1.45;
@@ -470,12 +533,12 @@
     }
     .detail-value {
       font-family: var(--font-heading);
-      font-size: clamp(18px, 2.5vw, 24px); font-style: italic;
+      font-size: clamp(20px, 2.6vw, 26px); font-style: italic;
       color: var(--text-dark); line-height: 1.4;
     }
     .detail-sub {
       font-family: var(--font-body); font-style: italic;
-      font-size: 14px; color: var(--text-soft); margin-top: 8px;
+      font-size: 16px; color: var(--text-soft); margin-top: 8px;
     }
 
     /* ════════════════ SCHEDULE ════════════════ */
@@ -528,7 +591,7 @@
     }
     .timeline-desc {
       color: var(--text-soft);
-      font-size: 15px;
+      font-size: 18px;
       font-style: italic;
       line-height: 1.65;
     }
@@ -543,7 +606,7 @@
     }
     .cd-label {
       font-family: var(--font-body); font-style: italic;
-      font-size: clamp(13px, 2.2vw, 16px);
+      font-size: clamp(15px, 2.2vw, 18px);
       letter-spacing: .02em; line-height: 1.55;
       color: var(--gold); margin-bottom: 48px; max-width: 22em; margin-left: auto; margin-right: auto;
     }
@@ -559,7 +622,7 @@
     }
     .cd-unit {
       font-family: var(--font-body);
-      font-size: clamp(10px, 1.6vw, 12px);
+      font-size: clamp(12px, 1.6vw, 14px);
       font-style: italic;
       letter-spacing: .04em;
       color: var(--text-soft); margin-top: 8px;
@@ -574,7 +637,7 @@
     /* ════════════════ MESSAGE ════════════════ */
     .message-section {
       background: var(--wine);
-      padding: clamp(80px, 14vw, 140px) clamp(24px, 8vw, 100px);
+      padding: clamp(72px, 11vw, 118px) clamp(24px, 8vw, 100px) clamp(64px, 9vw, 96px);
       text-align: center; position: relative; overflow: hidden;
     }
     .message-section::before {
@@ -593,15 +656,63 @@
       transform: translateX(-50%);
       white-space: nowrap; pointer-events: none;
     }
-    .msg-tag { font-family: var(--font-body); font-size: clamp(12px, 2vw, 14px); font-style: italic; letter-spacing: .05em; line-height: 1.5; color: var(--gold-light); margin-bottom: 28px; }
+    .msg-tag { font-family: var(--font-body); font-size: clamp(16px, 2.1vw, 19px); font-style: italic; letter-spacing: .05em; line-height: 1.5; color: var(--gold-light); margin-bottom: 22px; }
+    .msg-card {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: clamp(34px, 5.5vw, 54px) clamp(24px, 6vw, 56px) clamp(30px, 4.8vw, 44px);
+      border: 1px solid rgba(232,212,168,.22);
+      background: rgba(42,14,24,.18);
+      box-shadow: 0 24px 70px rgba(42,14,24,.18);
+    }
+    .msg-card::before {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(232,212,168,.12);
+      pointer-events: none;
+    }
+    .msg-lead {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin: 0 auto 22px;
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 4.2vw, 44px);
+      font-style: italic;
+      line-height: 1.35;
+    }
     .msg-body {
+      position: relative;
+      z-index: 1;
       font-family: var(--font-body); font-style: normal;
-      font-size: clamp(18px, 2.5vw, 25px); color: var(--ivory);
-      line-height: 1.9; max-width: 640px; margin: 0 auto 40px;
+      font-size: clamp(20px, 2.7vw, 28px); color: var(--ivory);
+      line-height: 1.82; max-width: 660px; margin: 0 auto 28px;
+    }
+    .msg-highlights {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 0 auto 26px;
+      max-width: 680px;
+    }
+    .msg-highlight {
+      padding: 16px 12px;
+      border: 1px solid rgba(232,212,168,.18);
+      color: rgba(250,246,239,.78);
+      font-size: clamp(17px, 2.1vw, 20px);
+      font-style: italic;
+      line-height: 1.5;
     }
     .msg-sig {
+      position: relative;
+      z-index: 1;
       font-family: var(--font-heading);
-      font-size: clamp(30px, 5vw, 46px);
+      font-size: clamp(34px, 5.2vw, 50px);
       font-style: italic;
       color: var(--gold-light);
     }
@@ -611,7 +722,7 @@
       padding: clamp(72px, 12vw, 120px) clamp(24px, 6vw, 72px);
       max-width: 800px; margin: 0 auto; text-align: center;
     }
-    .venue-tag { font-family: var(--font-body); font-size: clamp(12px, 2vw, 14px); font-style: italic; letter-spacing: .05em; line-height: 1.5; color: var(--gold); margin-bottom: 20px; }
+    .venue-tag { font-family: var(--font-body); font-size: clamp(14px, 2vw, 16px); font-style: italic; letter-spacing: .05em; line-height: 1.5; color: var(--gold); margin-bottom: 20px; }
     .venue-name {
       font-family: var(--font-heading);
       font-size: clamp(34px, 5.5vw, 58px);
@@ -622,7 +733,7 @@
     .venue-divider { width: 60px; height: 1px; background: var(--parchment); margin: 0 auto 24px; }
     .venue-addr {
       font-family: var(--font-body); font-style: normal;
-      font-size: clamp(16px, 2vw, 20px); color: var(--text-mid);
+      font-size: clamp(18px, 2.1vw, 22px); color: var(--text-mid);
       line-height: 2; margin-bottom: 36px;
     }
     .map-btn {
@@ -635,7 +746,7 @@
       border: 1px solid var(--wine);
       color: var(--wine);
       font-family: var(--font-body);
-      font-size: clamp(11px, 2vw, 13px);
+      font-size: clamp(13px, 2vw, 15px);
       font-style: italic;
       letter-spacing: .05em;
       text-decoration: none;
@@ -665,7 +776,7 @@
     .private-card .section-title { color: var(--ivory-dark); margin-bottom: 22px; }
     .private-note {
       color: rgba(250,246,239,.78);
-      font-size: clamp(17px, 2.4vw, 22px);
+      font-size: clamp(18px, 2.4vw, 23px);
       font-style: italic;
       line-height: 1.85;
     }
@@ -684,7 +795,7 @@
     }
     .footer-rule { width: 80px; height: 1px; background: rgba(196,160,96,.3); margin: 0 auto 20px; }
     .footer-sub {
-      font-family: var(--font-body); font-size: clamp(12px, 2vw, 14px);
+      font-family: var(--font-body); font-size: clamp(14px, 2vw, 16px);
       font-style: italic;
       letter-spacing: .05em; line-height: 1.6;
       color: rgba(196,160,96,.5);
@@ -708,10 +819,12 @@
         bottom: 14px;
         max-width: calc(100vw - 28px);
         overflow-x: auto;
+        font-size: 18px;
+
       }
       .site-nav a {
         padding: 8px 12px;
-        font-size: 12px;
+        font-size: 18px;
       }
       .music-toggle {
         right: 14px;
@@ -804,14 +917,19 @@
       }
 
       .message-section {
-        padding: 66px 16px 72px;
+        padding: 58px 16px 54px;
       }
       .msg-tag {
         letter-spacing: .05em;
       }
       .msg-body {
-        line-height: 1.85;
-        margin-bottom: 30px;
+        line-height: 1.78;
+        margin-bottom: 24px;
+      }
+      .msg-highlights {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 22px;
       }
 
       .venue-section {
@@ -840,10 +958,10 @@
         padding-top: 64px;
       }
       .hero-invite-text {
-        font-size: clamp(11px, 3.2vw, 14px);
+        font-size: clamp(14px, 3.6vw, 16px);
       }
       .hero-location {
-        font-size: clamp(11px, 3vw, 14px);
+        font-size: clamp(14px, 3.4vw, 16px);
       }
       .photo-label,
       .msg-tag,
@@ -866,7 +984,7 @@
         letter-spacing: .06em;
       }
       .map-btn {
-        font-size: clamp(11px, 3vw, 13px);
+        font-size: clamp(14px, 3.2vw, 15px);
       }
       .footer-sub {
         letter-spacing: .05em;
@@ -926,7 +1044,7 @@
     <path d="M20 8 Q14 14 8 20" stroke="#9a7840" stroke-width=".6" fill="none"/>
   </svg>
 
-  <p class="hero-monogram">T · A</p>
+  <p class="hero-monogram">N &amp; T</p>
   <p class="hero-invite-text">Trân trọng kính mời quý vị tham dự lễ thành hôn</p>
 
   <div class="hero-names">
@@ -950,7 +1068,7 @@
     <p class="hero-date-roman">XXII · VIII · MMXXVI</p>
     <p class="hero-date-full">Thứ Bảy, ngày 22 tháng 8 năm 2026</p>
 
-    <p class="hero-location">Thôn Hội Phú · An Ninh Đông, Tuy An, Phú Yên</p>
+    <p class="hero-location">Hôn lễ tại tư gia · Tiệc mời khách tại Nhà Hàng Mattarose, Tuy An</p>
   </div>
 
   <div class="scroll-cue">
@@ -976,11 +1094,11 @@
     <div class="photo-text">
       <p class="photo-label">Câu chuyện của chúng tôi</p>
       <p class="photo-title">Hai trái tim,<br/>một hành trình</p>
-      <p class="photo-body">Chúng tôi gặp nhau như một điều kỳ diệu — giữa muôn vàn ngẫu nhiên của cuộc đời,
+      <p class="photo-body">Chúng tôi gặp nhau như một điều kỳ diệu giữa muôn vàn ngẫu nhiên của cuộc đời,
         số phận đã dệt nên sợi chỉ đỏ nối hai chúng tôi lại.
         Từ những khoảnh khắc bình dị nhất, tình yêu lớn dần,
         đủ để chúng tôi biết rằng đây là nơi mình thuộc về.</p>
-      <blockquote class="photo-quote">        "Yêu là tìm thấy trong một người<br/>tất cả những gì bạn cần."<cite>Thành Nhật &amp; Anh Thảo</cite></blockquote>
+      <blockquote class="photo-quote">        "Yêu là tìm thấy trong một người<br/>tất cả những gì bạn cần."<cite>Chúng tôi</cite></blockquote>
     </div>
   </div>
 </section>
@@ -988,11 +1106,14 @@
 <!-- ══ PERSONAL INVITATION ══ -->
 <section class="guest-section reveal" id="loi-moi">
   <div class="guest-card">
+    <div class="guest-seal" aria-hidden="true">N &amp; T</div>
     <p class="guest-kicker" id="guestKicker">Thiệp mời thân thương</p>
     <h1 class="guest-name" id="guestGreeting">Trân trọng kính mời quý vị,</h1>
+    <div class="guest-divider" aria-hidden="true">✦</div>
     <p class="guest-message" id="guestInvitationMessage">
-      Thành Nhật và Anh Thảo trân trọng kính mời quý vị đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của quý vị là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.
+      Chúng tôi trân trọng kính mời quý vị đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của quý vị là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.
     </p>
+    <p class="guest-closing">Rất mong được đón tiếp</p>
   </div>
 </section>
 
@@ -1009,54 +1130,40 @@
       <p class="detail-label">Ngày cưới</p>
       <p class="detail-value">22 tháng 8<br/>2026</p>
 
-      <p class="detail-sub">Thứ Bảy</p>
+      <p class="detail-sub">Thứ Bảy · nhằm ngày 10 tháng 07 năm Bính Ngọ</p>
     </div>
     <div class="detail-card" style="transition-delay:.12s">
       <div class="detail-icon">🕐</div>
-      <p class="detail-label">Giờ tổ chức</p>
-      <p class="detail-value">11:00 sáng</p>
-      <p class="detail-sub">Mở cửa đón khách từ 10:30</p>
+      <p class="detail-label">Hôn lễ</p>
+      <p class="detail-value">07:00 sáng</p>
+      <p class="detail-sub">Cử hành tại tư gia</p>
     </div>
     <div class="detail-card" style="transition-delay:.24s">
       <div class="detail-icon">📍</div>
-      <p class="detail-label">Địa điểm</p>
-      <p class="detail-value">Thôn Hội Phú</p>
-      <p class="detail-sub">An Ninh Đông, Tuy An, Phú Yên</p>
+      <p class="detail-label">Tiệc mời khách</p>
+      <p class="detail-value">15:00 chiều</p>
+      <p class="detail-sub">Nhà Hàng Mattarose · Sảnh Lớn</p>
     </div>
   </div>
 </section>
 
 <!-- ══ SCHEDULE ══ -->
 <section class="schedule-section reveal" id="lich-trinh">
-  <p class="section-kicker">Lịch trình buổi tiệc</p>
-  <h2 class="section-title">Những khoảnh khắc đáng nhớ</h2>
+  <p class="section-kicker">Thông tin ngày cưới</p>
+  <h2 class="section-title">Hẹn gặp tại tiệc chung vui</h2>
   <div class="timeline">
     <div class="timeline-item">
-      <p class="timeline-time">10:30</p>
+      <p class="timeline-time">07:00</p>
       <div>
-        <h3 class="timeline-title">Đón khách</h3>
-        <p class="timeline-desc">Gia đình hai họ hân hoan chào đón quý khách tại khu vực sảnh tiệc.</p>
+        <h3 class="timeline-title">Hôn lễ tại tư gia</h3>
+        <p class="timeline-desc">Hôn lễ được cử hành tại tư gia vào lúc 7 giờ 00, Thứ Bảy ngày 22 tháng 8 năm 2026, nhằm ngày 10 tháng 07 năm Bính Ngọ.</p>
       </div>
     </div>
     <div class="timeline-item">
-      <p class="timeline-time">11:00</p>
+      <p class="timeline-time">15:00</p>
       <div>
-        <h3 class="timeline-title">Lễ thành hôn</h3>
-        <p class="timeline-desc">Cùng chứng kiến khoảnh khắc Thành Nhật và Anh Thảo chính thức nên duyên vợ chồng.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <p class="timeline-time">11:30</p>
-      <div>
-        <h3 class="timeline-title">Khai tiệc</h3>
-        <p class="timeline-desc">Dùng bữa thân mật và gửi đến cô dâu chú rể những lời chúc yêu thương.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <p class="timeline-time">13:00</p>
-      <div>
-        <h3 class="timeline-title">Chụp hình lưu niệm</h3>
-        <p class="timeline-desc">Lưu lại những tấm hình đẹp cùng gia đình, bạn bè và người thân.</p>
+        <h3 class="timeline-title">Tiệc chung vui tại Nhà Hàng Mattarose</h3>
+        <p class="timeline-desc">Kính mời quý khách đến chung vui cùng gia đình hai họ tại Sảnh Lớn, Nhà Hàng Mattarose, Thôn 4, An Ninh Tây, Tuy An.</p>
       </div>
     </div>
   </div>
@@ -1078,16 +1185,21 @@
 
 <!-- ══ MESSAGE ══ -->
 <section class="message-section reveal">
-  <div class="msg-ornament">Thành Nhật &amp; Anh Thảo</div>
   <p class="msg-tag">Lời mời từ trái tim</p>
-  <p class="msg-body">
-    Trong niềm vui vô hạn của ngày trọng đại, chúng tôi — Thành Nhật và Anh Thảo —
-    trân trọng kính mời quý vị đến chung vui cùng gia đình hai họ 
-    trong buổi lễ thành hôn thiêng liêng này. 
-    Sự hiện diện của bạn sẽ là món quà quý giá nhất 
-    mà chúng tôi trân trọng mãi mãi.
-  </p>
-  <p class="msg-sig">Thành Nhật &amp; Anh Thảo</p>
+  <div class="msg-card">
+    <p class="msg-lead">Một ngày vui sẽ trọn vẹn hơn khi có những người thương mến bên cạnh.</p>
+    <p class="msg-body">
+      Chúng tôi trân trọng gửi lời mời này với tất cả sự chân thành,
+      mong được đón quý vị đến chung vui, sẻ chia nụ cười và gửi những lời chúc tốt đẹp
+      trong ngày gia đình hai họ cùng chứng kiến một khởi đầu mới.
+    </p>
+    <div class="msg-highlights" aria-label="Những điều chúng tôi trân trọng">
+      <p class="msg-highlight">Một lời chúc<br/>thật lòng</p>
+      <p class="msg-highlight">Một khoảnh khắc<br/>sum vầy</p>
+      <p class="msg-highlight">Một kỷ niệm<br/>đáng nhớ</p>
+    </div>
+    <p class="msg-sig">Thành Nhật &amp; Anh Thảo</p>
+  </div>
 </section>
 
 <div class="border-row"></div>
@@ -1095,15 +1207,16 @@
 <!-- ══ VENUE ══ -->
 <section class="venue-section reveal" id="dia-diem">
   <p class="venue-tag">Địa Điểm Tổ Chức</p>
-  <h2 class="venue-name">Thôn Hội Phú</h2>
+  <h2 class="venue-name">Nhà Hàng Mattarose</h2>
   <div class="venue-divider"></div>
   <p class="venue-addr">
-    Thôn Hội Phú, Xã An Ninh Đông<br/>
-    Huyện Tuy An, Tỉnh Phú Yên<br/><br/>
-    <em>Thứ Bảy, ngày 22 tháng 8 năm 2026</em>
+    Sảnh Lớn, Thôn 4<br/>
+    Xã An Ninh Tây, Tuy An, Phú Yên<br/><br/>
+    <em>15 giờ · Thứ Bảy, ngày 22 tháng 8 năm 2026</em><br/>
+    <em>Nhằm ngày 10 tháng 07 năm Bính Ngọ</em>
 
   </p>
-  <a href="https://maps.app.goo.gl/E6Tt3BkfJVyoUQVq6" target="_blank" class="map-btn">
+  <a href="https://www.google.com/maps/place/Trung+t%C3%A2m+h%E1%BB%99i+ngh%E1%BB%8B+v%C3%A0+ti%E1%BB%87c+cu%E1%BB%9Bi+MATTAROSE/@13.341667,109.2573563,18.5z/data=!4m6!3m5!1s0x316f990051146b2d:0xcfdf89f361c25ea8!8m2!3d13.342217!4d109.2579596!16s%2Fg%2F11wy2k9p35?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
     </svg>
@@ -1126,7 +1239,7 @@
 <footer>
   <p class="footer-names">Thành Nhật &amp; Anh Thảo</p>
   <div class="footer-rule"></div>
-  <p class="footer-sub">22 · 08 · 2026 &nbsp;·&nbsp; Tuy An, Phú Yên &nbsp;·&nbsp; Mãi mãi bên nhau</p>
+  <p class="footer-sub">22 · 08 · 2026 &nbsp;·&nbsp; Nhà Hàng Mattarose, Tuy An &nbsp;·&nbsp; Mãi mãi bên nhau</p>
 
 </footer>
 
@@ -1174,10 +1287,10 @@
   const guest = guestSlug && window.WEDDING_GUESTS ? window.WEDDING_GUESTS[guestSlug] : null;
   if (guest) {
     document.body.dataset.guestGroup = guest.group || 'guest';
-    document.getElementById('guestKicker').textContent = 'Thiệp mời riêng';
+    document.getElementById('guestKicker').textContent = 'Thiệp mời thân thương';
     document.getElementById('guestGreeting').textContent = guest.greeting || `Thân mến bạn ${guest.name} + ❤️,`;
     document.getElementById('guestInvitationMessage').textContent = guest.invitationMessage ||
-      'Thành Nhật và Anh Thảo trân trọng kính mời bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của bạn là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.';
+      'Chúng tôi trân trọng kính mời bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của bạn là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.';
 
     if (guest.showAfterParty) {
       document.getElementById('afterPartySection').classList.add('is-visible');
@@ -1188,7 +1301,7 @@
   }
 
   // ── COUNTDOWN ──
-  const target = new Date('2026-08-22T11:00:00');
+  const target = new Date('2026-08-22T15:00:00');
   function tick() {
     const now = new Date(), diff = target - now;
     if (diff <= 0) {
