@@ -2,1093 +2,950 @@ const weddingGuestList = [
   {
     "slug": "duc",
     "name": "Đức",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Bình Thạnh",
-    "note": ""
+    "area": "Bình Thạnh"
   },
   {
     "slug": "viet",
     "name": "Việt",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 12D",
-    "area": "Bình Thạnh",
-    "note": ""
+    "area": "Bình Thạnh"
   },
   {
     "slug": "xuan-thanh",
     "name": "Xuân Thành",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Bình Thạnh",
-    "note": ""
+    "area": "Bình Thạnh"
   },
   {
     "slug": "tung",
     "name": "Tùng",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Bình Thạnh",
-    "note": ""
+    "area": "Bình Thạnh"
   },
   {
     "slug": "minh",
     "name": "Minh",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Bình Thạnh",
-    "note": ""
+    "area": "Bình Thạnh"
   },
   {
     "slug": "an",
     "name": "An",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 12D",
-    "area": "Bình Thạnh",
-    "note": ""
+    "area": "Bình Thạnh"
   },
   {
     "slug": "nguyet",
     "name": "Nguyệt",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 12D",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "xoan",
     "name": "Xoan",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 12D",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "tin",
     "name": "Tín",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "cong-khanh",
     "name": "Công Khanh",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "phong",
     "name": "Phong",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 12D",
-    "area": "Thôn 3",
-    "note": ""
+    "area": "Thôn 3"
   },
   {
     "slug": "hoang",
     "name": "Hoàng",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 12D",
-    "area": "Thôn 3",
-    "note": ""
+    "area": "Thôn 3"
   },
   {
     "slug": "thuy",
     "name": "Thuỷ",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 12D",
-    "area": "Thôn 3",
-    "note": ""
+    "area": "Thôn 3"
   },
   {
     "slug": "yen-nhi",
     "name": "Yến Nhi",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 12D",
-    "area": "Thôn 3",
-    "note": ""
+    "area": "Thôn 3"
   },
   {
     "slug": "tan-thanh",
     "name": "Tấn Thành",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Thôn 5",
-    "note": ""
+    "area": "Thôn 5"
   },
   {
     "slug": "danh",
     "name": "Danh",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Thôn 5",
-    "note": ""
+    "area": "Thôn 5"
   },
   {
     "slug": "nhi-huynh",
     "name": "Nhi Huỳnh",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Thôn 5",
-    "note": ""
+    "area": "Thôn 5"
   },
   {
     "slug": "hong-nhi",
     "name": "Hồng Nhi",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 12D",
-    "area": "Thôn 5",
-    "note": ""
+    "area": "Thôn 5"
   },
   {
     "slug": "huy",
     "name": "Huy",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Thôn 6",
-    "note": ""
+    "area": "Thôn 6"
   },
   {
     "slug": "hoa",
     "name": "Hoa",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Thôn 6",
-    "note": ""
+    "area": "Thôn 6"
   },
   {
     "slug": "sang",
     "name": "Sang",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 12D",
-    "area": "Thôn 7",
-    "note": ""
+    "area": "Thôn 7"
   },
   {
     "slug": "hien",
     "name": "Hiền",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 9C",
-    "area": "Thôn 3",
-    "note": ""
+    "area": "Thôn 3"
   },
   {
     "slug": "ngo-my",
     "name": "Ngô Mỹ",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 9C",
-    "area": "Bình Thạnh",
-    "note": ""
+    "area": "Bình Thạnh"
   },
   {
     "slug": "quynh",
     "name": "Quỳnh",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 9C",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "toi",
     "name": "Tới",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 9C",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "khoi",
     "name": "Khởi",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn Học 9C",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "hoan",
     "name": "Hoàn",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn Học 9C",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "thay-sang",
     "name": "thầy Sang",
-    "seats": 2,
+    "partySize": 2,
     "group": "Khác",
-    "area": "Thôn 7",
-    "note": ""
+    "area": "Thôn 7"
   },
   {
     "slug": "diep",
     "name": "Diệp",
-    "seats": 2,
+    "partySize": 2,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "tho",
     "name": "Thọ",
-    "seats": 1,
+    "partySize": 1,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "chi-hong",
     "name": "chị Hồng",
-    "seats": 2,
+    "partySize": 2,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "chi-ly",
     "name": "chị Ly",
-    "seats": 2,
+    "partySize": 2,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "anh-thanh",
     "name": "anh Thạnh",
-    "seats": 2,
+    "partySize": 2,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "chi-binh",
     "name": "chị Bình",
-    "seats": 2,
+    "partySize": 2,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "em-truc",
     "name": "em Trúc",
-    "seats": 1,
+    "partySize": 1,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "anh-phong",
     "name": "anh Phong",
-    "seats": 1,
+    "partySize": 1,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "chi-sang",
     "name": "chị Sáng",
-    "seats": 2,
+    "partySize": 2,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "toan",
     "name": "Toàn",
-    "seats": 1,
+    "partySize": 1,
     "group": "Đá Banh năm xưa",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "bao",
     "name": "Bảo",
-    "seats": 1,
+    "partySize": 1,
     "group": "Đá Banh năm xưa",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "dien",
     "name": "Diễn",
-    "seats": 1,
+    "partySize": 1,
     "group": "Đá Banh năm xưa",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "dinh",
     "name": "Định",
-    "seats": 1,
+    "partySize": 1,
     "group": "Đá Banh năm xưa",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "nguyen",
     "name": "Nguyên",
-    "seats": 1,
+    "partySize": 1,
     "group": "Đá Banh năm xưa",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "anh-vinh",
     "name": "anh Vinh",
-    "seats": 1,
+    "partySize": 1,
     "group": "Họ hàng",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "chi-hang",
     "name": "chị Hằng",
-    "seats": 2,
+    "partySize": 2,
     "group": "Họ hàng",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "chi-banh",
     "name": "chị Bành",
-    "seats": 2,
+    "partySize": 2,
     "group": "Họ hàng",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "anh-tau",
     "name": "anh Tàu",
-    "seats": 2,
+    "partySize": 2,
     "group": "Họ hàng",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "quoc",
     "name": "Quốc",
-    "seats": 1,
+    "partySize": 1,
     "group": "Ae xã giao",
-    "area": "Bình Thạnh",
-    "note": ""
+    "area": "Bình Thạnh"
   },
   {
     "slug": "a-tan",
     "name": "a Tân",
-    "seats": 1,
+    "partySize": 1,
     "group": "Ae xã giao",
-    "area": "Bình Thạnh",
-    "note": ""
+    "area": "Bình Thạnh"
   },
   {
     "slug": "ngo-trong",
     "name": "Ngô Trọng",
-    "seats": 2,
+    "partySize": 2,
     "group": "Ae xã giao",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "anh-dien",
     "name": "anh Diễn",
-    "seats": 1,
+    "partySize": 1,
     "group": "Ae xã giao",
-    "area": "Thôn 3",
-    "note": ""
+    "area": "Thôn 3"
   },
   {
     "slug": "nam-sin",
     "name": "Nam Sin",
-    "seats": 1,
+    "partySize": 1,
     "group": "Ae xã giao",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "minh-phuong",
     "name": "Minh Phương",
-    "seats": 2,
+    "partySize": 2,
     "group": "Ae xã giao",
-    "area": "Phú Yên",
-    "note": ""
+    "area": "Phú Yên"
   },
   {
     "slug": "thanh-ngoc",
     "name": "Thanh Ngọc",
-    "seats": 2,
+    "partySize": 2,
     "group": "Ae xã giao",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "lam-duyen",
     "name": "Lâm Duyên",
-    "seats": 1,
+    "partySize": 1,
     "group": "Ae xã giao",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "a-tu",
     "name": "a Tú",
-    "seats": 1,
+    "partySize": 1,
     "group": "Ae xã giao",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "a-duc-qui-vi",
     "name": "a Đức(Quí vị)",
-    "seats": 1,
+    "partySize": 1,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "anh-tien",
     "name": "anh Tiến",
-    "seats": 1,
+    "partySize": 1,
     "group": "Hàng xóm",
-    "area": "Thôn 2",
-    "note": ""
+    "area": "Thôn 2"
   },
   {
     "slug": "duy",
     "name": "Duy",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "nghia",
     "name": "Nghĩa",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "anh-tin",
     "name": "anh Tín",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "tinh",
     "name": "Tình",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "quy",
     "name": "Quý",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn học ĐH",
-    "area": "Phú Yên",
-    "note": ""
+    "area": "Phú Yên"
   },
   {
     "slug": "thanh",
     "name": "Thành",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "duc-2",
     "name": "Đức",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "viet-2",
     "name": "Việt",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "an-2",
     "name": "Ân",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "hang-truong",
     "name": "Hằng + Trường",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "phap",
     "name": "Pháp",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "toi-2",
     "name": "Tới",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "quoc-2",
     "name": "Quốc",
-    "seats": 1,
+    "partySize": 1,
     "group": "Bạn học ĐH",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "anh-thiet",
     "name": "anh Thiết",
-    "seats": 2,
+    "partySize": 2,
     "group": "TMA SG",
-    "area": "Sài Gòn",
-    "note": ""
+    "area": "Sài Gòn"
   },
   {
     "slug": "chi-tram",
     "name": "chị Trâm",
-    "seats": 2,
+    "partySize": 2,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "anh-cong",
     "name": "anh Công",
-    "seats": 1,
+    "partySize": 1,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "e-viet",
     "name": "e Việt",
-    "seats": 1,
+    "partySize": 1,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-doanh",
     "name": "a Doanh",
-    "seats": 2,
+    "partySize": 2,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "chi-nhung",
     "name": "chị Nhung",
-    "seats": 2,
+    "partySize": 2,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "bao-2",
     "name": "Bảo",
-    "seats": 1,
+    "partySize": 1,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "mai",
     "name": "Mai",
-    "seats": 1,
+    "partySize": 1,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "khoi-2",
     "name": "Khôi",
-    "seats": 1,
+    "partySize": 1,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "ho",
     "name": "Hò",
-    "seats": 1,
+    "partySize": 1,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-dong",
     "name": "a Động",
-    "seats": 2,
+    "partySize": 2,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-luan",
     "name": "a Luân",
-    "seats": 1,
+    "partySize": 1,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-thanh",
     "name": "a Thành",
-    "seats": 1,
+    "partySize": 1,
     "group": "TMA SG",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-doi",
     "name": "a Đời",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "a-tuan-nguyen",
     "name": "a Tuấn Nguyễn",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-tai",
     "name": "a Tài",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "hieu-trinh",
     "name": "Hiếu Trịnh",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-chien",
     "name": "a Chiến",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "linh-lam",
     "name": "Linh Lâm",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "loc",
     "name": "Lộc",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "son-vo",
     "name": "Sơn Võ",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "ha",
     "name": "Hà",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-nghia",
     "name": "a Nghĩa",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "men",
     "name": "Mến",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "hau",
     "name": "Hậu",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-linh",
     "name": "a Linh",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "luan-hang",
     "name": "Luân Hàng",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-qui",
     "name": "a Quí",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-tien",
     "name": "a Tiến",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "thinh-diep",
     "name": "Thịnh Diệp",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "vu-dang",
     "name": "Vũ Đặng",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "chi-que",
     "name": "chị Quế",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-chau",
     "name": "a Châu",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-them-phuong",
     "name": "a Thêm + Phương",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-phung",
     "name": "a Phụng",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "hong-le",
     "name": "Hồng Lê",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "chi-qui",
     "name": "chị Qui",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "khanh-cu",
     "name": "Khánh Cù",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "thoi",
     "name": "Thời",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "tu-pham",
     "name": "Tú Phạm",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-van",
     "name": "a Văn",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "e-hai",
     "name": "e Hải",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "e-hieu-vo",
     "name": "e Hiếu Võ",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "e-trung",
     "name": "e Trung",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "huy-le",
     "name": "Huy Lê",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-khai",
     "name": "a Khải",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "truong",
     "name": "Trưởng",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "huy-tran",
     "name": "Huy Trần",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "huy-nguyen",
     "name": "Huy Nguyễn",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "nga-nguyen",
     "name": "Nga Nguyễn",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-dat",
     "name": "a Đạt",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC13",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-tuan-dang",
     "name": "a Tuấn Đặng",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-hung",
     "name": "a Hùng",
-    "seats": 2,
+    "partySize": 2,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-dung-le",
     "name": "a Dũng Lê",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-tuong",
     "name": "a Tường",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-thiet",
     "name": "a Thiết",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-phuoc",
     "name": "a Phước",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "a-suong",
     "name": "a Sướng",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "chi-tram-2",
     "name": "chị Trâm",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "truong-yen",
     "name": "Trương Yên",
-    "seats": 1,
+    "partySize": 1,
     "group": "Ae xã giao",
-    "area": "Phú Yên",
-    "note": ""
+    "area": "Phú Yên"
   },
   {
     "slug": "a-de",
     "name": "a Dẽ",
-    "seats": 2,
+    "partySize": 2,
     "group": "Ae xã giao",
-    "area": "Quy Nhơn",
-    "note": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "e-son-dinh",
     "name": "e Sơn Đinh",
-    "seats": 1,
+    "partySize": 1,
     "group": "DC Khác",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "ma-nuoi-me-duy",
     "name": "má nuôi (mẹ Duy)",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn của gia đình",
-    "area": "",
-    "note": ""
+    "area": ""
   },
   {
     "slug": "nha-anh-2-duy",
     "name": "nhà anh 2(Duy)",
-    "seats": 2,
+    "partySize": 2,
     "group": "Bạn của gia đình",
-    "area": "",
-    "note": ""
+    "area": ""
   }
 ];
 
 function createGuestInvitation(guest) {
-  const isFamily = Number(guest.seats) >= 2;
+  const isFamily = Number(guest.partySize) >= 2;
   const displayName = isFamily ? `gia đình ${guest.name}` : `bạn ${guest.name} + <3`;
-  const seatLabel = isFamily ? `${guest.seats} người` : '1 người + <3';
-  const areaNote = guest.area ? `Khu vực/Nơi ở: ${guest.area}.` : '';
-  const groupNote = guest.group ? `Nhóm khách: ${guest.group}.` : '';
-  const defaultNote = isFamily
-    ? `Nhật và Thảo rất hạnh phúc khi được đón gia đình ${guest.name} đến chung vui trong ngày trọng đại. ${areaNote}`
-    : `Nhật và Thảo rất hạnh phúc khi được đón bạn ${guest.name} đến chung vui trong ngày trọng đại. ${areaNote}`;
 
   return {
     greeting: `Thân mến ${displayName},`,
     name: guest.name,
-    seats: seatLabel,
-    table: groupNote || 'Sẽ được hướng dẫn tại sảnh',
-    note: guest.note || defaultNote.trim(),
     group: guest.group || 'Khách mời',
     showAfterParty: false
   };
