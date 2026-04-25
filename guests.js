@@ -350,8 +350,8 @@ const weddingGuestList = [
     "area": "Thôn 3"
   },
   {
-    "slug": "nam-sin",
-    "name": "Nam Sin",
+    "slug": "em-nam-sin",
+    "name": "em Nam Sin",
     "partySize": 1,
     "group": "Ae xã giao",
     "area": "Thôn 2"
@@ -371,8 +371,8 @@ const weddingGuestList = [
     "area": "Quy Nhơn"
   },
   {
-    "slug": "lam-duyen",
-    "name": "Lâm Duyên",
+    "slug": "a-lam-duyen",
+    "name": "a Lâm Duyên",
     "partySize": 1,
     "group": "Ae xã giao",
     "area": "Thôn 2"
@@ -532,29 +532,29 @@ const weddingGuestList = [
     "area": ""
   },
   {
-    "slug": "bao-2",
-    "name": "Bảo",
+    "slug": "e-bao",
+    "name": "e Bảo",
     "partySize": 1,
     "group": "TMA SG",
     "area": ""
   },
   {
-    "slug": "mai",
-    "name": "Mai",
+    "slug": "e-mai",
+    "name": "em Mai",
     "partySize": 1,
     "group": "TMA SG",
     "area": ""
   },
   {
-    "slug": "khoi-2",
-    "name": "Khôi",
+    "slug": "e-khoi",
+    "name": "em Khôi",
     "partySize": 1,
     "group": "TMA SG",
     "area": ""
   },
   {
-    "slug": "ho",
-    "name": "Hò",
+    "slug": "e-ho",
+    "name": "em Hò",
     "partySize": 1,
     "group": "TMA SG",
     "area": ""
@@ -630,15 +630,15 @@ const weddingGuestList = [
     "area": ""
   },
   {
-    "slug": "son-vo",
-    "name": "Sơn Võ",
+    "slug": "e-son-vo",
+    "name": "em Sơn Võ",
     "partySize": 1,
     "group": "DC13",
     "area": ""
   },
   {
-    "slug": "ha",
-    "name": "Hà",
+    "slug": "e-ha",
+    "name": "em Hà",
     "partySize": 1,
     "group": "DC13",
     "area": ""
@@ -651,15 +651,15 @@ const weddingGuestList = [
     "area": ""
   },
   {
-    "slug": "men",
-    "name": "Mến",
+    "slug": "e-men",
+    "name": "em Mến",
     "partySize": 1,
     "group": "DC13",
     "area": ""
   },
   {
-    "slug": "hau",
-    "name": "Hậu",
+    "slug": "e-hau",
+    "name": "em Hậu",
     "partySize": 1,
     "group": "DC13",
     "area": ""
@@ -672,8 +672,8 @@ const weddingGuestList = [
     "area": ""
   },
   {
-    "slug": "luan-hang",
-    "name": "Luân Hàng",
+    "slug": "e-luan-hang",
+    "name": "em Luân Hàng",
     "partySize": 1,
     "group": "DC13",
     "area": ""
@@ -700,8 +700,8 @@ const weddingGuestList = [
     "area": ""
   },
   {
-    "slug": "vu-dang",
-    "name": "Vũ Đặng",
+    "slug": "a-vu-dang",
+    "name": "anh Vũ Đặng",
     "partySize": 1,
     "group": "DC13",
     "area": ""
@@ -722,7 +722,7 @@ const weddingGuestList = [
   },
   {
     "slug": "a-them-phuong",
-    "name": "a Thêm + Phương",
+    "name": "chị Phương",
     "partySize": 2,
     "group": "DC13",
     "area": ""
@@ -735,8 +735,8 @@ const weddingGuestList = [
     "area": ""
   },
   {
-    "slug": "hong-le",
-    "name": "Hồng Lê",
+    "slug": "e-hong-le",
+    "name": "em Hồng Lê",
     "partySize": 1,
     "group": "DC13",
     "area": ""
@@ -763,8 +763,8 @@ const weddingGuestList = [
     "area": ""
   },
   {
-    "slug": "tu-pham",
-    "name": "Tú Phạm",
+    "slug": "e-tu-pham",
+    "name": "em Tú Phạm",
     "partySize": 1,
     "group": "DC13",
     "area": ""
@@ -819,8 +819,8 @@ const weddingGuestList = [
     "area": ""
   },
   {
-    "slug": "huy-tran",
-    "name": "Huy Trần",
+    "slug": "a-huy-tran",
+    "name": "anh Huy Trần",
     "partySize": 1,
     "group": "DC13",
     "area": ""
@@ -833,8 +833,8 @@ const weddingGuestList = [
     "area": ""
   },
   {
-    "slug": "nga-nguyen",
-    "name": "Nga Nguyễn",
+    "slug": "e-nga-nguyen",
+    "name": "em Nga Nguyễn",
     "partySize": 1,
     "group": "DC13",
     "area": ""
