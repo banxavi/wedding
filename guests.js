@@ -928,14 +928,14 @@ const weddingGuestList = [
     "name": "má nuôi (mẹ Duy)",
     "partySize": 2,
     "group": "Bạn của gia đình",
-    "area": ""
+    "area": "Quy Nhơn"
   },
   {
     "slug": "nha-anh-2-duy",
     "name": "nhà anh 2(Duy)",
     "partySize": 2,
     "group": "Bạn của gia đình",
-    "area": ""
+    "area": "Quy Nhơn"
   }
 ];
 
@@ -962,9 +962,16 @@ function isFriendGroup(group) {
   return /bạn học|đá banh|tma|dc|xã giao/i.test(group || '');
 }
 
+function shouldShowLodgingList(group) {
+  const normalizedGroup = (group || '').trim().toLowerCase();
+  return ['dc13', 'dc khác', 'nhơn', 'tma sg'].includes(normalizedGroup);
+}
+
 function createGuestInvitation(guest) {
   const isFamily = Number(guest.partySize) >= 2;
   const titledGuest = getGuestAddress(guest.name);
+  const showLodgingList = shouldShowLodgingList(guest.group);
+  const lodgingFileUrl = showLodgingList ? 'https://docs.google.com/spreadsheets/d/1IvNRduh-NVvrsaGTFQXvHHRfSog4uee3b05s0zW_BP4/edit?gid=962239887#gid=962239887' : null;
 
   if (titledGuest) {
     const displayName = isFamily ? `gia đình ${titledGuest.address}` : titledGuest.address;
@@ -975,7 +982,9 @@ function createGuestInvitation(guest) {
       invitationMessage: `Chúng em trân trọng kính mời ${displayName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng em.`,
       name: guest.name,
       group: guest.group || 'Khách mời',
-      showAfterParty: false
+      showAfterParty: false,
+      showLodgingList,
+      lodgingFileUrl
     };
   }
 
@@ -991,7 +1000,9 @@ function createGuestInvitation(guest) {
       : `Rất mong bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho ${recipientPronoun}.`,
     name: guest.name,
     group: guest.group || 'Khách mời',
-    showAfterParty: false
+    showAfterParty: false,
+    showLodgingList,
+    lodgingFileUrl
   };
 }
 
