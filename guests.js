@@ -898,7 +898,7 @@ const weddingGuestList = [
   {
     "slug": "chi-tram-2",
     "name": "chị Trâm",
-    "partySize": 1,
+    "partySize": 2,
     "group": "DC Khác",
     "area": ""
   },
