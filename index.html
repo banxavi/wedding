@@ -882,7 +882,7 @@
     <a href="#lich-trinh">Lịch trình</a>
     <a href="#dia-diem">Địa điểm</a>
   </nav>
-  <button class="music-toggle" id="musicToggle" type="button" aria-label="Bật hoặc tắt nhạc nền">♪</button>
+  <button class="music-toggle is-playing" id="musicToggle" type="button" aria-label="Bật hoặc tắt nhạc nền" aria-pressed="true">♫</button>
   <!-- ══ HERO ══ -->
 <section class="hero">
   <!-- corner ornaments -->
@@ -1121,19 +1121,36 @@
 <script>
   const bgMusic = document.getElementById('bgMusic');
   const musicToggle = document.getElementById('musicToggle');
+  let wantsMusic = true;
+
   function updateMusicButton() {
-    musicToggle.classList.toggle('is-playing', !bgMusic.paused);
-    musicToggle.textContent = bgMusic.paused ? '♪' : '♫';
+    musicToggle.classList.toggle('is-playing', wantsMusic);
+    musicToggle.textContent = wantsMusic ? '♫' : '♪';
+    musicToggle.setAttribute('aria-pressed', String(wantsMusic));
   }
+
+  function unlockMusicOnInteraction(event) {
+    if (!wantsMusic || event.target.closest('#musicToggle')) return;
+    bgMusic.play().catch(() => {}).finally(updateMusicButton);
+    document.removeEventListener('pointerdown', unlockMusicOnInteraction);
+  }
+
   function tryPlayMusic() {
-    bgMusic.play().then(updateMusicButton).catch(updateMusicButton);
+    updateMusicButton();
+    bgMusic.play().then(updateMusicButton).catch(() => {
+      document.addEventListener('pointerdown', unlockMusicOnInteraction);
+    });
   }
+
   tryPlayMusic();
+
   musicToggle.addEventListener('click', () => {
-    if (bgMusic.paused) {
+    if (!wantsMusic || bgMusic.paused) {
+      wantsMusic = true;
       bgMusic.play().then(updateMusicButton).catch(updateMusicButton);
       return;
     }
+    wantsMusic = false;
     bgMusic.pause();
     updateMusicButton();
   });
