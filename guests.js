@@ -939,12 +939,48 @@ const weddingGuestList = [
   }
 ];
 
+function getGuestAddress(name) {
+  const titlePatterns = [
+    { pattern: /^(?:a|anh)\s+/i, title: 'anh' },
+    { pattern: /^(?:chị|chi)\s+/i, title: 'chị' },
+    { pattern: /^(?:thầy|thay)\s+/i, title: 'thầy' }
+  ];
+
+  for (const { pattern, title } of titlePatterns) {
+    if (pattern.test(name)) {
+      return {
+        title,
+        address: `${title} ${name.replace(pattern, '').trim()}`
+      };
+    }
+  }
+
+  return null;
+}
+
 function createGuestInvitation(guest) {
   const isFamily = Number(guest.partySize) >= 2;
+  const titledGuest = getGuestAddress(guest.name);
+
+  if (titledGuest) {
+    const displayName = isFamily ? `${titledGuest.address} và gia đình` : titledGuest.address;
+
+    return {
+      greeting: `Thân mến ${displayName},`,
+      invitationMessage: `Chúng em là Thành Nhật và Anh Thảo, trân trọng kính mời ${displayName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${titledGuest.title} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng em.`,
+      name: guest.name,
+      group: guest.group || 'Khách mời',
+      showAfterParty: false
+    };
+  }
+
   const displayName = isFamily ? `gia đình ${guest.name}` : `bạn ${guest.name} + ❤️`;
 
   return {
     greeting: `Thân mến ${displayName},`,
+    invitationMessage: isFamily
+      ? `Thành Nhật và Anh Thảo trân trọng kính mời gia đình ${guest.name} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của gia đình là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.`
+      : `Thành Nhật và Anh Thảo rất mong bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của bạn là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.`,
     name: guest.name,
     group: guest.group || 'Khách mời',
     showAfterParty: false
