@@ -657,12 +657,60 @@
       white-space: nowrap; pointer-events: none;
     }
     .msg-tag { font-family: var(--font-body); font-size: clamp(14px, 2vw, 16px); font-style: italic; letter-spacing: .05em; line-height: 1.5; color: var(--gold-light); margin-bottom: 28px; }
+    .msg-card {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: clamp(30px, 6vw, 58px);
+      border: 1px solid rgba(232,212,168,.22);
+      background: rgba(42,14,24,.18);
+      box-shadow: 0 24px 70px rgba(42,14,24,.18);
+    }
+    .msg-card::before {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(232,212,168,.12);
+      pointer-events: none;
+    }
+    .msg-lead {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin: 0 auto 24px;
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: clamp(25px, 4vw, 40px);
+      font-style: italic;
+      line-height: 1.35;
+    }
     .msg-body {
+      position: relative;
+      z-index: 1;
       font-family: var(--font-body); font-style: normal;
       font-size: clamp(18px, 2.5vw, 25px); color: var(--ivory);
-      line-height: 1.9; max-width: 640px; margin: 0 auto 40px;
+      line-height: 1.9; max-width: 640px; margin: 0 auto 34px;
+    }
+    .msg-highlights {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 0 auto 34px;
+      max-width: 640px;
+    }
+    .msg-highlight {
+      padding: 14px 12px;
+      border: 1px solid rgba(232,212,168,.18);
+      color: rgba(250,246,239,.78);
+      font-size: clamp(15px, 2vw, 18px);
+      font-style: italic;
+      line-height: 1.5;
     }
     .msg-sig {
+      position: relative;
+      z-index: 1;
       font-family: var(--font-heading);
       font-size: clamp(30px, 5vw, 46px);
       font-style: italic;
@@ -877,6 +925,9 @@
       .msg-body {
         line-height: 1.85;
         margin-bottom: 30px;
+      }
+      .msg-highlights {
+        grid-template-columns: 1fr;
       }
 
       .venue-section {
@@ -1133,14 +1184,20 @@
 <!-- ══ MESSAGE ══ -->
 <section class="message-section reveal">
   <p class="msg-tag">Lời mời từ trái tim</p>
-  <p class="msg-body">
-    Trong niềm vui vô hạn của ngày trọng đại, chúng tôi
-    trân trọng kính mời quý vị đến chung vui cùng gia đình hai họ 
-    trong buổi lễ thành hôn thiêng liêng này. 
-    Sự hiện diện của bạn sẽ là món quà quý giá nhất 
-    mà chúng tôi trân trọng mãi mãi.
-  </p>
-  <p class="msg-sig">Thành Nhật &amp; Anh Thảo</p>
+  <div class="msg-card">
+    <p class="msg-lead">Một ngày vui sẽ trọn vẹn hơn khi có những người thương mến bên cạnh.</p>
+    <p class="msg-body">
+      Chúng tôi trân trọng gửi lời mời này với tất cả sự chân thành,
+      mong được đón quý vị đến chung vui, sẻ chia nụ cười và gửi những lời chúc tốt đẹp
+      trong ngày gia đình hai họ cùng chứng kiến một khởi đầu mới.
+    </p>
+    <div class="msg-highlights" aria-label="Những điều chúng tôi trân trọng">
+      <p class="msg-highlight">Một lời chúc<br/>thật lòng</p>
+      <p class="msg-highlight">Một khoảnh khắc<br/>sum vầy</p>
+      <p class="msg-highlight">Một kỷ niệm<br/>đáng nhớ</p>
+    </div>
+    <p class="msg-sig">Thành Nhật &amp; Anh Thảo</p>
+  </div>
 </section>
 
 <div class="border-row"></div>
