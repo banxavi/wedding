@@ -272,8 +272,8 @@
       margin-bottom: 18px;
     }
     .guest-message {
-      max-width: 600px;
-      margin: 0 auto 28px;
+      max-width: 650px;
+      margin: 0 auto;
       color: var(--text-mid);
       font-size: clamp(17px, 2.6vw, 22px);
       font-style: italic;
@@ -946,14 +946,6 @@
   </div>
 </section>
 
-<!-- ══ PERSONAL INVITATION ══ -->
-<section class="guest-section reveal" id="loi-moi">
-  <div class="guest-card">
-    <p class="guest-kicker" id="guestKicker">Thiệp mời thân thương</p>
-    <h1 class="guest-name" id="guestGreeting">Trân trọng kính mời quý vị,</h1>
-  </div>
-</section>
-
 <!-- ══ PHOTO SECTION ══ -->
 <section class="photo-section reveal">
   <div class="photo-inner">
@@ -977,6 +969,17 @@
         đủ để chúng tôi biết rằng đây là nơi mình thuộc về.</p>
       <blockquote class="photo-quote">        "Yêu là tìm thấy trong một người<br/>tất cả những gì bạn cần."<cite>Thành Nhật &amp; Anh Thảo</cite></blockquote>
     </div>
+  </div>
+</section>
+
+<!-- ══ PERSONAL INVITATION ══ -->
+<section class="guest-section reveal" id="loi-moi">
+  <div class="guest-card">
+    <p class="guest-kicker" id="guestKicker">Thiệp mời thân thương</p>
+    <h1 class="guest-name" id="guestGreeting">Trân trọng kính mời quý vị,</h1>
+    <p class="guest-message" id="guestInvitationMessage">
+      Thành Nhật và Anh Thảo trân trọng kính mời quý vị đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của quý vị là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.
+    </p>
   </div>
 </section>
 
@@ -1142,7 +1145,9 @@
   if (guest) {
     document.body.dataset.guestGroup = guest.group || 'guest';
     document.getElementById('guestKicker').textContent = 'Thiệp mời riêng';
-    document.getElementById('guestGreeting').textContent = guest.greeting || `Thân mến ${guest.name},`;
+    document.getElementById('guestGreeting').textContent = guest.greeting || `Thân mến bạn ${guest.name} + ❤️,`;
+    document.getElementById('guestInvitationMessage').textContent = guest.invitationMessage ||
+      'Thành Nhật và Anh Thảo trân trọng kính mời bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của bạn là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.';
 
     if (guest.showAfterParty) {
       document.getElementById('afterPartySection').classList.add('is-visible');
