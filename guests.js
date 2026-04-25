@@ -972,7 +972,7 @@ function createGuestInvitation(guest) {
 
     return {
       greeting: `Thân mến ${displayName},`,
-      invitationMessage: `Chúng em là Thành Nhật và Anh Thảo, trân trọng kính mời ${displayName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng em.`,
+      invitationMessage: `Chúng em trân trọng kính mời ${displayName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng em.`,
       name: guest.name,
       group: guest.group || 'Khách mời',
       showAfterParty: false
@@ -987,8 +987,8 @@ function createGuestInvitation(guest) {
   return {
     greeting: `Thân mến ${displayName},`,
     invitationMessage: isFamily
-      ? `Thành Nhật và Anh Thảo trân trọng kính mời ${familyName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho ${recipientPronoun}.`
-      : `Thành Nhật và Anh Thảo rất mong bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho ${recipientPronoun}.`,
+      ? `Trân trọng kính mời ${familyName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho ${recipientPronoun}.`
+      : `Rất mong bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho ${recipientPronoun}.`,
     name: guest.name,
     group: guest.group || 'Khách mời',
     showAfterParty: false
