@@ -963,7 +963,7 @@ function createGuestInvitation(guest) {
   const titledGuest = getGuestAddress(guest.name);
 
   if (titledGuest) {
-    const displayName = isFamily ? `${titledGuest.address} và gia đình` : titledGuest.address;
+    const displayName = isFamily ? `gia đình ${titledGuest.address}` : titledGuest.address;
 
     return {
       greeting: `Thân mến ${displayName},`,
