@@ -988,7 +988,7 @@
         <p class="guest-meta-value" id="guestSeats">Theo thiệp mời</p>
       </div>
       <div class="guest-meta-item">
-        <p class="guest-meta-label">Bàn tiệc</p>
+        <p class="guest-meta-label">Nhóm/Bàn tiệc</p>
         <p class="guest-meta-value" id="guestTable">Sẽ được hướng dẫn tại sảnh</p>
       </div>
       <div class="guest-meta-item">
@@ -1197,7 +1197,7 @@
     document.getElementById('guestMessage').textContent = guest.note || 'Nhật và Thảo rất mong được đón bạn trong ngày vui của chúng mình.';
     document.getElementById('guestSeats').textContent = guest.seats || 'Theo thiệp mời';
     document.getElementById('guestTable').textContent = guest.table || 'Sẽ được hướng dẫn tại sảnh';
-    document.getElementById('guestGroup').textContent = groupLabels[guest.group] || 'Khách mời';
+    document.getElementById('guestGroup').textContent = groupLabels[guest.group] || guest.group || 'Khách mời';
 
     if (guest.showAfterParty) {
       document.getElementById('afterPartySection').classList.add('is-visible');
