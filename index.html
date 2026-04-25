@@ -36,6 +36,58 @@
       overflow-x: hidden;
     }
 
+    .site-nav {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      gap: 6px;
+      padding: 8px;
+      border: 1px solid rgba(154,120,64,.22);
+      border-radius: 999px;
+      background: rgba(250,246,239,.78);
+      box-shadow: 0 18px 45px rgba(61,40,16,.08);
+      backdrop-filter: blur(14px);
+    }
+    .site-nav a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--wine);
+      font-family: 'EB Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      letter-spacing: .03em;
+      line-height: 1;
+      text-decoration: none;
+      transition: background .25s, color .25s;
+      white-space: nowrap;
+    }
+    .site-nav a:hover { background: var(--wine); color: var(--ivory); }
+
+    .music-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(196,160,96,.55);
+      border-radius: 50%;
+      background: rgba(107,45,62,.9);
+      color: var(--gold-pale);
+      cursor: pointer;
+      box-shadow: 0 14px 36px rgba(42,26,14,.18);
+      transition: transform .25s, background .25s;
+    }
+    .music-toggle:hover { transform: translateY(-2px); background: var(--wine-light); }
+    .music-toggle.is-playing { animation: musicPulse 1.8s ease-in-out infinite; }
+    @keyframes musicPulse {
+      0%, 100% { box-shadow: 0 14px 36px rgba(42,26,14,.18); }
+      50% { box-shadow: 0 14px 42px rgba(196,160,96,.45); }
+    }
+
     /* ─── PAPER TEXTURE ─── */
     body::before {
       content: '';
@@ -158,6 +210,98 @@
     @keyframes riseIn {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ════════════════ PERSONAL INVITATION ════════════════ */
+    .guest-section {
+      padding: clamp(56px, 8vw, 92px) clamp(18px, 6vw, 72px);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(196,160,96,.12), transparent 26%),
+        radial-gradient(circle at 82% 12%, rgba(196,160,96,.08), transparent 26%),
+        var(--ivory);
+    }
+    .guest-card {
+      position: relative;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: clamp(34px, 7vw, 64px);
+      border: 1px solid rgba(154,120,64,.28);
+      background: rgba(255,255,255,.58);
+      box-shadow: 0 24px 80px rgba(61,40,16,.08);
+      text-align: center;
+      overflow: hidden;
+    }
+    .guest-card::before {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(196,160,96,.18);
+      pointer-events: none;
+    }
+    .guest-kicker,
+    .section-kicker {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(12px, 2vw, 14px);
+      font-style: italic;
+      letter-spacing: .08em;
+      line-height: 1.5;
+      color: var(--gold);
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .guest-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 6vw, 58px);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--wine);
+      line-height: 1.18;
+      margin-bottom: 18px;
+    }
+    .guest-message {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: var(--text-mid);
+      font-size: clamp(17px, 2.6vw, 22px);
+      font-style: italic;
+      line-height: 1.85;
+    }
+    .guest-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .guest-meta-item {
+      padding: 18px 14px;
+      border: 1px solid rgba(154,120,64,.2);
+      background: rgba(250,246,239,.65);
+    }
+    .guest-meta-label {
+      color: var(--text-soft);
+      font-size: 12px;
+      font-style: italic;
+      letter-spacing: .04em;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .guest-meta-value {
+      color: var(--text-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(16px, 2vw, 20px);
+      font-style: italic;
+      line-height: 1.35;
     }
 
     /* ════════════════ PHOTO SECTION ════════════════ */
@@ -351,6 +495,61 @@
       font-size: 14px; color: var(--text-soft); margin-top: 8px;
     }
 
+    /* ════════════════ SCHEDULE ════════════════ */
+    .schedule-section {
+      padding: clamp(70px, 10vw, 112px) clamp(18px, 6vw, 72px);
+      background:
+        linear-gradient(180deg, rgba(250,246,239,.78), rgba(240,232,216,.92)),
+        var(--ivory-dark);
+      text-align: center;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5vw, 52px);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--wine);
+      line-height: 1.2;
+      margin-bottom: 42px;
+    }
+    .timeline {
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 22px;
+      border: 1px solid rgba(154,120,64,.2);
+      background: rgba(255,255,255,.52);
+      text-align: left;
+    }
+    .timeline-time {
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 4vw, 34px);
+      font-style: italic;
+      line-height: 1;
+    }
+    .timeline-title {
+      color: var(--text-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 2.4vw, 24px);
+      font-style: italic;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .timeline-desc {
+      color: var(--text-soft);
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.65;
+    }
+
     /* ════════════════ COUNTDOWN ════════════════ */
     .countdown-section {
       background: linear-gradient(135deg, var(--ivory-dark) 0%, var(--ivory) 100%);
@@ -459,6 +658,31 @@
     }
     .map-btn:hover { background: var(--wine); color: var(--ivory); }
 
+    /* ════════════════ PRIVATE NOTE ════════════════ */
+    .private-section {
+      display: none;
+      padding: clamp(60px, 9vw, 96px) clamp(18px, 6vw, 72px);
+      background: var(--wine);
+      text-align: center;
+    }
+    .private-section.is-visible { display: block; }
+    .private-card {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: clamp(30px, 6vw, 54px);
+      border: 1px solid rgba(232,212,168,.35);
+      background: rgba(42,14,24,.18);
+      color: var(--ivory);
+    }
+    .private-card .section-kicker { color: var(--gold-light); }
+    .private-card .section-title { color: var(--ivory-dark); margin-bottom: 22px; }
+    .private-note {
+      color: rgba(250,246,239,.78);
+      font-size: clamp(17px, 2.4vw, 22px);
+      font-style: italic;
+      line-height: 1.85;
+    }
+
     /* ════════════════ FOOTER ════════════════ */
     footer {
       background: var(--brown);
@@ -490,6 +714,22 @@
       .hero {
         min-height: 92svh;
         padding: 72px 18px 54px;
+      }
+      .site-nav {
+        top: auto;
+        bottom: 14px;
+        max-width: calc(100vw - 28px);
+        overflow-x: auto;
+      }
+      .site-nav a {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+      .music-toggle {
+        right: 14px;
+        bottom: 72px;
+        width: 44px;
+        height: 44px;
       }
       .hero-monogram {
         letter-spacing: .22em;
@@ -552,6 +792,14 @@
       }
       .detail-card {
         padding: 30px 18px;
+      }
+
+      .guest-meta {
+        grid-template-columns: 1fr;
+      }
+      .timeline-item {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
 
       .countdown-section {
@@ -640,6 +888,15 @@
         line-height: 1.65;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -647,6 +904,13 @@
     <source src="sounds/ido.mp3" type="audio/mpeg">
     Trình duyệt không hỗ trợ audio.
   </audio>
+  <nav class="site-nav" aria-label="Điều hướng thiệp cưới">
+    <a href="#loi-moi">Lời mời</a>
+    <a href="#thoi-gian">Thời gian</a>
+    <a href="#lich-trinh">Lịch trình</a>
+    <a href="#dia-diem">Địa điểm</a>
+  </nav>
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Bật hoặc tắt nhạc nền">♪</button>
   <!-- ══ HERO ══ -->
 <section class="hero">
   <!-- corner ornaments -->
@@ -698,9 +962,8 @@
   </div>
 
   <div class="hero-date-block">
-    <p class="hero-date-roman">XIV · VI · MMXXVI</p>
-    <!-- <p class="hero-date-full">Thứ Bảy, ngày 14 tháng 6 năm 2026</p> -->
-    <p class="hero-date-full">Hai Bên Gia Đình Đang Thống Nhất</p>
+    <p class="hero-date-roman">XXII · VIII · MMXXVI</p>
+    <p class="hero-date-full">Thứ Bảy, ngày 22 tháng 8 năm 2026</p>
 
     <p class="hero-location">Thôn Hội Phú · An Ninh Đông, Tuy An, Phú Yên</p>
   </div>
@@ -711,8 +974,33 @@
   </div>
 </section>
 
+<!-- ══ PERSONAL INVITATION ══ -->
+<section class="guest-section reveal" id="loi-moi">
+  <div class="guest-card">
+    <p class="guest-kicker" id="guestKicker">Thiệp mời thân thương</p>
+    <h1 class="guest-name" id="guestGreeting">Trân trọng kính mời quý vị,</h1>
+    <p class="guest-message" id="guestMessage">
+      Nhật và Thảo rất hạnh phúc khi được gửi lời mời này đến bạn. Sự hiện diện của bạn trong ngày vui là niềm vinh dự và là món quà quý giá với gia đình hai họ.
+    </p>
+    <div class="guest-meta" id="guestMeta">
+      <div class="guest-meta-item">
+        <p class="guest-meta-label">Suất mời</p>
+        <p class="guest-meta-value" id="guestSeats">Theo thiệp mời</p>
+      </div>
+      <div class="guest-meta-item">
+        <p class="guest-meta-label">Bàn tiệc</p>
+        <p class="guest-meta-value" id="guestTable">Sẽ được hướng dẫn tại sảnh</p>
+      </div>
+      <div class="guest-meta-item">
+        <p class="guest-meta-label">Ghi chú</p>
+        <p class="guest-meta-value" id="guestGroup">Khách mời</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ PHOTO SECTION ══ -->
-<section class="photo-section">
+<section class="photo-section reveal">
   <div class="photo-inner">
     <div class="carousel" id="photoCarousel">
       <div class="carousel-track" id="carouselTrack">
@@ -740,7 +1028,7 @@
 <div class="border-row"></div>
 
 <!-- ══ DATE DETAILS ══ -->
-<section class="details-section">
+<section class="details-section reveal" id="thoi-gian">
   <p class="details-ornament">✦ ✦ ✦</p>
   <h2 class="details-title">Ngày trọng đại của chúng tôi</h2>
 
@@ -748,8 +1036,7 @@
     <div class="detail-card">
       <div class="detail-icon">🕯️</div>
       <p class="detail-label">Ngày cưới</p>
-      <!-- <p class="detail-value">14 tháng 6<br/>2026</p> -->
-      <p class="detail-value">Hai Bên Gia Đình Đang Thống Nhất</p>
+      <p class="detail-value">22 tháng 8<br/>2026</p>
 
       <p class="detail-sub">Thứ Bảy</p>
     </div>
@@ -768,8 +1055,44 @@
   </div>
 </section>
 
+<!-- ══ SCHEDULE ══ -->
+<section class="schedule-section reveal" id="lich-trinh">
+  <p class="section-kicker">Lịch trình buổi tiệc</p>
+  <h2 class="section-title">Những khoảnh khắc đáng nhớ</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <p class="timeline-time">10:30</p>
+      <div>
+        <h3 class="timeline-title">Đón khách</h3>
+        <p class="timeline-desc">Gia đình hai họ hân hoan chào đón quý khách tại khu vực sảnh tiệc.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <p class="timeline-time">11:00</p>
+      <div>
+        <h3 class="timeline-title">Lễ thành hôn</h3>
+        <p class="timeline-desc">Cùng chứng kiến khoảnh khắc Nhật và Thảo chính thức nên duyên vợ chồng.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <p class="timeline-time">11:30</p>
+      <div>
+        <h3 class="timeline-title">Khai tiệc</h3>
+        <p class="timeline-desc">Dùng bữa thân mật và gửi đến cô dâu chú rể những lời chúc yêu thương.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <p class="timeline-time">13:00</p>
+      <div>
+        <h3 class="timeline-title">Chụp hình lưu niệm</h3>
+        <p class="timeline-desc">Lưu lại những tấm hình đẹp cùng gia đình, bạn bè và người thân.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ COUNTDOWN ══ -->
-<section class="countdown-section">
+<section class="countdown-section reveal">
   <p class="cd-label">Đếm ngược đến ngày hạnh phúc</p>
   <div class="countdown" id="countdown">
     <div class="cd-block"><span class="cd-num" id="cd-d">--</span><span class="cd-unit">Ngày</span></div>
@@ -783,7 +1106,7 @@
 </section>
 
 <!-- ══ MESSAGE ══ -->
-<section class="message-section">
+<section class="message-section reveal">
   <div class="msg-ornament">Nhật &amp; Thảo</div>
   <p class="msg-tag">Lời mời từ trái tim</p>
   <p class="msg-body">
@@ -799,15 +1122,14 @@
 <div class="border-row"></div>
 
 <!-- ══ VENUE ══ -->
-<section class="venue-section">
+<section class="venue-section reveal" id="dia-diem">
   <p class="venue-tag">Địa Điểm Tổ Chức</p>
   <h2 class="venue-name">Thôn Hội Phú</h2>
   <div class="venue-divider"></div>
   <p class="venue-addr">
     Thôn Hội Phú, Xã An Ninh Đông<br/>
     Huyện Tuy An, Tỉnh Phú Yên<br/><br/>
-    <!-- <em>Thứ Bảy, ngày 14 tháng 6 năm 2026</em> -->
-    <em>Hai Bên Gia Đình Đang Thống Nhất</em>
+    <em>Thứ Bảy, ngày 22 tháng 8 năm 2026</em>
 
   </p>
   <a href="https://maps.app.goo.gl/E6Tt3BkfJVyoUQVq6" target="_blank" class="map-btn">
@@ -818,27 +1140,75 @@
   </a>
 </section>
 
+<!-- ══ PRIVATE NOTE ══ -->
+<section class="private-section" id="afterPartySection" data-guest-section="after-party">
+  <div class="private-card reveal">
+    <p class="section-kicker">Thông tin riêng</p>
+    <h2 class="section-title">Sau tiệc chính</h2>
+    <p class="private-note" id="afterPartyNote">
+      Mời bạn ở lại dùng trà và chụp hình thân mật cùng gia đình sau buổi tiệc.
+    </p>
+  </div>
+</section>
+
 <!-- ══ FOOTER ══ -->
 <footer>
   <p class="footer-names">Nhật &amp; Thảo</p>
   <div class="footer-rule"></div>
-  <!-- <p class="footer-sub">14 · 06 · 2026 &nbsp;·&nbsp; Tuy An, Phú Yên &nbsp;·&nbsp; Mãi mãi bên nhau</p> -->
-  <p class="footer-sub">Tuy An, Phú Yên &nbsp;·&nbsp; Mãi mãi bên nhau</p>
+  <p class="footer-sub">22 · 08 · 2026 &nbsp;·&nbsp; Tuy An, Phú Yên &nbsp;·&nbsp; Mãi mãi bên nhau</p>
 
 </footer>
 
+<script src="guests.js"></script>
 <script>
   const bgMusic = document.getElementById('bgMusic');
+  const musicToggle = document.getElementById('musicToggle');
+  function updateMusicButton() {
+    musicToggle.classList.toggle('is-playing', !bgMusic.paused);
+    musicToggle.textContent = bgMusic.paused ? '♪' : '♫';
+  }
   function tryPlayMusic() {
-    bgMusic.play().catch(() => {
-      // nếu chặn autoplay, chơi khi click lần đầu
-      document.body.addEventListener('click', () => bgMusic.play(), { once: true });
-    });
+    bgMusic.play().then(updateMusicButton).catch(updateMusicButton);
   }
   tryPlayMusic();
+  musicToggle.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play().then(updateMusicButton).catch(updateMusicButton);
+      return;
+    }
+    bgMusic.pause();
+    updateMusicButton();
+  });
+
+  // ── PERSONALIZED GUEST DATA ──
+  const params = new URLSearchParams(window.location.search);
+  const guestSlug = params.get('guest');
+  const guest = guestSlug && window.WEDDING_GUESTS ? window.WEDDING_GUESTS[guestSlug] : null;
+  const groupLabels = {
+    vip: 'Khách mời đặc biệt',
+    friends: 'Bạn bè thân thiết',
+    family: 'Gia đình thân thương'
+  };
+
+  if (guest) {
+    document.body.dataset.guestGroup = guest.group || 'guest';
+    document.getElementById('guestKicker').textContent = 'Thiệp mời riêng';
+    document.getElementById('guestGreeting').textContent = guest.greeting || `Thân mến ${guest.name},`;
+    document.getElementById('guestMessage').textContent = guest.note || 'Nhật và Thảo rất mong được đón bạn trong ngày vui của chúng mình.';
+    document.getElementById('guestSeats').textContent = guest.seats || 'Theo thiệp mời';
+    document.getElementById('guestTable').textContent = guest.table || 'Sẽ được hướng dẫn tại sảnh';
+    document.getElementById('guestGroup').textContent = groupLabels[guest.group] || 'Khách mời';
+
+    if (guest.showAfterParty) {
+      document.getElementById('afterPartySection').classList.add('is-visible');
+      if (guest.afterPartyNote) {
+        document.getElementById('afterPartyNote').textContent = guest.afterPartyNote;
+      }
+    }
+  }
 
   // ── COUNTDOWN ──
-  const target = new Date('2026-06-14T11:00:00');
+  const target = new Date('2026-08-22T11:00:00');
   function tick() {
     const now = new Date(), diff = target - now;
     if (diff <= 0) {
@@ -862,7 +1232,7 @@
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: .18 });
-document.querySelectorAll('.detail-card').forEach(el => observer.observe(el));
+document.querySelectorAll('.detail-card, .reveal').forEach(el => observer.observe(el));
 
   const carouselTrack = document.getElementById('carouselTrack');
   const carouselSlides = Array.from(document.querySelectorAll('.carousel-slide'));
