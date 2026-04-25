@@ -870,14 +870,14 @@ const weddingGuestList = [
   {
     "slug": "a-tuong",
     "name": "a Tường",
-    "partySize": 1,
+    "partySize": 2,
     "group": "DC Khác",
     "area": ""
   },
   {
     "slug": "a-thiet",
     "name": "a Thiết",
-    "partySize": 1,
+    "partySize": 2,
     "group": "DC Khác",
     "area": ""
   },

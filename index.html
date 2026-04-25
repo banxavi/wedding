@@ -191,6 +191,10 @@
       margin-bottom: 4px;
       text-shadow: none;
     }
+    .hero-names .hero-name-line {
+      display: block;
+      white-space: nowrap;
+    }
     .hero-names .amp {
       display: block;
       font-family: var(--font-body);
@@ -839,23 +843,22 @@
       line-height: 1.8;
     }
     .lodging-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 26px;
-      border: 1px solid var(--wine);
+      display: inline;
+      padding: 0;
+      border: 0;
       color: var(--wine);
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
       font-family: var(--font-body);
-      font-size: clamp(14px, 2vw, 16px);
+      font-size: clamp(16px, 2.1vw, 20px);
       font-style: italic;
-      letter-spacing: .04em;
-      transition: background .25s, color .25s;
+      letter-spacing: .02em;
+      transition: color .25s, text-decoration-color .25s;
     }
     .lodging-link:hover {
-      background: var(--wine);
-      color: var(--ivory);
+      color: var(--wine-light);
+      text-decoration-color: var(--wine-light);
     }
 
     /* ════════════════ FOOTER ════════════════ */
@@ -942,6 +945,9 @@
       .hero-names .hero-role {
         font-size: clamp(13px, 3.4vw, 18px);
         margin-bottom: 2px;
+      }
+      .hero-names .hero-name-line {
+        font-size: .96em;
       }
       .hero-names .amp {
         font-size: clamp(18px, 5.4vw, 28px);
@@ -1147,10 +1153,10 @@
 
   <div class="hero-names">
     <span class="hero-role">Chú rể</span>
-    Thành Nhật
+    <span class="hero-name-line">Thành Nhật</span>
     <span class="amp">&amp;</span>
     <span class="hero-role">Cô dâu</span>
-    Anh Thảo
+    <span class="hero-name-line">Anh Thảo</span>
   </div>
 
   <div class="orn-divider">
