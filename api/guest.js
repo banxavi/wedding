@@ -1,12 +1,8 @@
-const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-const ROOT = __dirname;
-const GUEST_FILE = path.join(ROOT, 'guests.js');
+const GUEST_FILE = path.join(process.cwd(), 'guests.js');
 const LODGING_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1IvNRduh-NVvrsaGTFQXvHHRfSog4uee3b05s0zW_BP4/edit?gid=962239887#gid=962239887';
 
 function readGuestList() {
@@ -115,43 +111,18 @@ function createGuestInvitation(guest) {
   };
 }
 
-function buildGuestMap() {
-  const list = readGuestList();
-  return new Map(list.map((guest) => [guest.slug, createGuestInvitation(guest)]));
-}
-
-let guestMap = buildGuestMap();
-
-app.disable('x-powered-by');
-
-app.get('/guests.js', (_req, res) => {
-  res.status(404).send('Not found');
-});
-
-app.get('/api/guest', (req, res) => {
+module.exports = (req, res) => {
   const slug = String(req.query.guest || '').trim();
   if (!slug || !/^[a-z0-9-]+$/i.test(slug)) {
     return res.status(400).json({ error: 'Invalid guest slug' });
   }
 
-  const guest = guestMap.get(slug);
-  if (!guest) {
+  const list = readGuestList();
+  const rawGuest = list.find((item) => item.slug === slug);
+
+  if (!rawGuest) {
     return res.status(404).json({ error: 'Guest not found' });
   }
 
-  return res.json({ guest });
-});
-
-app.get('/api/reload-guests', (_req, res) => {
-  guestMap = buildGuestMap();
-  res.json({ ok: true, total: guestMap.size });
-});
-
-app.use(express.static(ROOT, {
-  index: 'index.html',
-  extensions: ['html']
-}));
-
-app.listen(PORT, () => {
-  console.log(`Wedding invite server running at http://localhost:${PORT}`);
-});
+  return res.status(200).json({ guest: createGuestInvitation(rawGuest) });
+};

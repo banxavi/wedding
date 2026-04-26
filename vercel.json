@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/guests.js",
+      "destination": "/api/not-found"
+    }
+  ]
+}
