@@ -1371,7 +1371,6 @@
 
 </footer>
 
-<script src="guests.js"></script>
 <script>
   const bgMusic = document.getElementById('bgMusic');
   const musicToggle = document.getElementById('musicToggle');
@@ -1410,30 +1409,47 @@
   });
 
   // ── PERSONALIZED GUEST DATA ──
-  const params = new URLSearchParams(window.location.search);
-  const guestSlug = params.get('guest');
-  const guest = guestSlug && window.WEDDING_GUESTS ? window.WEDDING_GUESTS[guestSlug] : null;
-  if (guest) {
-    document.body.dataset.guestGroup = guest.group || 'guest';
-    document.getElementById('guestKicker').textContent = 'Thiệp mời thân thương';
-    document.getElementById('guestGreeting').textContent = guest.greeting || `Thân mến bạn ${guest.name} + ❤️,`;
-    document.getElementById('guestInvitationMessage').textContent = guest.invitationMessage ||
-      'Chúng tôi trân trọng kính mời bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của bạn là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.';
+  async function loadGuestData() {
+    const params = new URLSearchParams(window.location.search);
+    const guestSlug = params.get('guest');
+    if (!guestSlug) return;
 
-    if (guest.showAfterParty) {
-      document.getElementById('afterPartySection').classList.add('is-visible');
-      if (guest.afterPartyNote) {
-        document.getElementById('afterPartyNote').textContent = guest.afterPartyNote;
-      }
-    }
+    try {
+      const response = await fetch(`/api/guest?guest=${encodeURIComponent(guestSlug)}`, {
+        headers: { 'Accept': 'application/json' }
+      });
 
-    if (guest.showLodgingList) {
-      document.getElementById('lodgingSection').classList.add('is-visible');
-      if (guest.lodgingFileUrl) {
-        document.getElementById('lodgingListLink').setAttribute('href', guest.lodgingFileUrl);
+      if (!response.ok) return;
+
+      const payload = await response.json();
+      const guest = payload && payload.guest;
+      if (!guest) return;
+
+      document.body.dataset.guestGroup = guest.group || 'guest';
+      document.getElementById('guestKicker').textContent = 'Thiệp mời thân thương';
+      document.getElementById('guestGreeting').textContent = guest.greeting || `Thân mến bạn ${guest.name} + ❤️,`;
+      document.getElementById('guestInvitationMessage').textContent = guest.invitationMessage ||
+        'Chúng tôi trân trọng kính mời bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của bạn là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng tôi.';
+
+      if (guest.showAfterParty) {
+        document.getElementById('afterPartySection').classList.add('is-visible');
+        if (guest.afterPartyNote) {
+          document.getElementById('afterPartyNote').textContent = guest.afterPartyNote;
+        }
       }
+
+      if (guest.showLodgingList) {
+        document.getElementById('lodgingSection').classList.add('is-visible');
+        if (guest.lodgingFileUrl) {
+          document.getElementById('lodgingListLink').setAttribute('href', guest.lodgingFileUrl);
+        }
+      }
+    } catch (_) {
+      // Graceful fallback: keep default invitation text.
     }
   }
+
+  loadGuestData();
 
   // ── COUNTDOWN ──
   const target = new Date('2026-08-22T15:00:00');

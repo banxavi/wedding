@@ -799,15 +799,15 @@ const weddingGuestList = [
   },
   {
     "slug": "huy-le",
-    "name": "Huy Lê",
-    "partySize": 1,
+    "name": "Huy",
+    "partySize": 2,
     "group": "DC13",
     "area": ""
   },
   {
     "slug": "a-khai",
     "name": "a Khải",
-    "partySize": 1,
+    "partySize": 2,
     "group": "DC13",
     "area": ""
   },
