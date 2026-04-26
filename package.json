@@ -5,7 +5,8 @@
   "description": "Wedding invitation site with backend guest API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "links": "node scripts/generate-guest-links.js"
   },
   "dependencies": {
     "express": "^4.21.2"
