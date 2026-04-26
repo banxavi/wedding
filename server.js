@@ -43,14 +43,42 @@ function isFriendGroup(group) {
   return /bạn học|đá banh|tma|dc|xã giao/i.test(group || '');
 }
 
+function decodeEncodedGroup(value) {
+  if (!value || typeof value !== 'string' || !value.startsWith('enc:')) {
+    return value || '';
+  }
+
+  try {
+    const token = value.slice(4);
+    const base64 = token.replace(/-/g, '+').replace(/_/g, '/');
+    const padded = base64 + '='.repeat((4 - (base64.length % 4)) % 4);
+    return Buffer.from(padded, 'base64').toString('utf8');
+  } catch (_) {
+    return '';
+  }
+}
+
+function decodeGuestGroup(group) {
+  return decodeEncodedGroup(group) || group || '';
+}
+
+function toPublicGroup(rawGroup) {
+  if (typeof rawGroup === 'string' && rawGroup.startsWith('enc:')) {
+    return 'Khách mời';
+  }
+  return decodeGuestGroup(rawGroup) || 'Khách mời';
+}
+
 function shouldShowLodgingList(group) {
-  const normalizedGroup = (group || '').trim().toLowerCase();
+  const normalizedGroup = decodeGuestGroup(group).trim().toLowerCase();
   return ['dc13', 'dc khác', 'nhơn', 'tma sg'].includes(normalizedGroup);
 }
 
 function createGuestInvitation(guest) {
   const isFamily = Number(guest.partySize) >= 2;
   const titledGuest = getGuestAddress(guest.name);
+  const decodedGroup = decodeGuestGroup(guest.group);
+  const publicGroup = toPublicGroup(guest.group);
   const showLodgingList = shouldShowLodgingList(guest.group);
   const lodgingFileUrl = showLodgingList ? LODGING_SHEET_URL : null;
 
@@ -62,17 +90,17 @@ function createGuestInvitation(guest) {
       greeting: `Thân mến ${displayName},`,
       invitationMessage: `Chúng em trân trọng kính mời ${displayName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho chúng em.`,
       name: guest.name,
-      group: guest.group || 'Khách mời',
+      group: publicGroup,
       showAfterParty: false,
       showLodgingList,
       lodgingFileUrl
     };
   }
 
-  const familyName = isFriendGroup(guest.group) ? `gia đình bạn ${guest.name}` : `gia đình ${guest.name}`;
+  const familyName = isFriendGroup(decodedGroup) ? `gia đình bạn ${guest.name}` : `gia đình ${guest.name}`;
   const displayName = isFamily ? familyName : `bạn ${guest.name} + ❤️`;
-  const presenceSubject = isFamily && isFriendGroup(guest.group) ? 'gia đình bạn' : isFamily ? 'gia đình' : 'bạn';
-  const recipientPronoun = isFriendGroup(guest.group) ? 'chúng mình' : 'chúng tôi';
+  const presenceSubject = isFamily && isFriendGroup(decodedGroup) ? 'gia đình bạn' : isFamily ? 'gia đình' : 'bạn';
+  const recipientPronoun = isFriendGroup(decodedGroup) ? 'chúng mình' : 'chúng tôi';
 
   return {
     greeting: `Thân mến ${displayName},`,
@@ -80,7 +108,7 @@ function createGuestInvitation(guest) {
       ? `Trân trọng kính mời ${familyName} đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho ${recipientPronoun}.`
       : `Rất mong bạn đến chung vui cùng gia đình hai họ trong ngày thành hôn. Sự hiện diện của ${presenceSubject} là niềm vinh hạnh và là lời chúc phúc quý giá dành cho ${recipientPronoun}.`,
     name: guest.name,
-    group: guest.group || 'Khách mời',
+    group: publicGroup,
     showAfterParty: false,
     showLodgingList,
     lodgingFileUrl
